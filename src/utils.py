@@ -21,10 +21,8 @@ def save_object(file_path, obj):
     except Exception as e:
         raise CustomException(e, sys)
     
-def evaluate_models(x,y, models):
+def evaluate_models(x_train, y_train, x_test,y_test, models):
     try:
-        x_train,y_train,x_test,y_test = train_test_split(x,y, test_size=0.2, random_state=42)
-
         r2_report = {}
         mae_report = {}
 
@@ -48,5 +46,5 @@ def evaluate_models(x,y, models):
             
             return r2_report, mae_report
 
-    except:
-        pass
+    except Exception as e:
+        CustomException(e,sys)
