@@ -42,7 +42,7 @@ class ModelTrainer:
                 "Random Forest": RandomForestRegressor(),
                 "Decision Tree": DecisionTreeRegressor(),
                 "Gradient Boosting": GradientBoostingRegressor(),
-                "Linear Regression": LinearRegression(),
+            #   "Linear Regression": LinearRegression(),
                 "XGBRegressor": XGBRegressor(),
                 "CatBoosting Regressor": CatBoostRegressor(verbose=False),
                 "AdaBoost Regressor": AdaBoostRegressor(),
@@ -68,11 +68,11 @@ class ModelTrainer:
                     # 'max_features':['auto','sqrt','log2'],
                     'n_estimators': [8,16,32,64,128,256]
                 },
-                "Linear Regression": {
-                    "fit_intercept": [True, False],
-                    "copy_X": [True, False],
-                    "positive": [True, False]  # Restrict coefficients to be positive
-                },
+                #"Linear Regression": {
+                 #   "fit_intercept": [True, False],
+                  #  "copy_X": [True, False],
+                   # "positive": [True, False]  # Restrict coefficients to be positive
+                #},
 
                 "XGBRegressor":{
                     'learning_rate':[.1,.01,.05,.001],
@@ -99,6 +99,7 @@ class ModelTrainer:
                 ]
 
             best_model = models[best_model_name]
+            print(best_model)
             logging.info("Best model on both training and testing dataset has been found")
 
             if best_model_score <0.6:
