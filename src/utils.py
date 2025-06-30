@@ -3,6 +3,8 @@ Contain function which can be used in for entire application
 """
 
 import os, sys, numpy as np, pandas as pd, dill
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score, mean_absolute_error
 from src.exception import CustomException
 from src.logger import logging
 
@@ -18,3 +20,33 @@ def save_object(file_path, obj):
 
     except Exception as e:
         raise CustomException(e, sys)
+    
+def evaluate_models(x,y, models):
+    try:
+        x_train,y_train,x_test,y_test = train_test_split(x,y, test_size=0.2, random_state=42)
+
+        r2_report = {}
+        mae_report = {}
+
+        for i in range(len(models)):
+            model= list(models.values())[i]
+
+            model.fit(x_train,y_train)
+
+            y_pred_train = model.predict(x_test)
+            y_pred_test = model.predict(x_test)
+
+            train_model_score = r2_score(y_train,y_pred_train)
+            train_model_mae = mean_absolute_error(y_train,y_pred_train)
+
+            test_model_score = r2_score(y_test,y_pred_test)
+            test_model_mae = mean_absolute_error(y_test,y_pred_test)
+
+
+            r2_report[list(models.key())[i]] = test_model_score
+            mae_report[list(n=models.key())[i]] = test_model_mae
+            
+            return r2_report, mae_report
+
+    except:
+        pass
