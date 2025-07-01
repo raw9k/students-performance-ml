@@ -20,7 +20,7 @@ An interactive machine learning web application that predicts a student's **Math
   - Easy scalability and maintenance
 
 - 🧪 Multiple regression models used and compared:
-  - Hyperparameter tuning with `RandomizedSearchCV`
+  - Hyperparameter tuning with `GridSearchCV`
   - Model selection based on R² score and other metrics
 
 - 🧠 Saved model and preprocessor objects ensure consistent and fast predictions
@@ -41,12 +41,11 @@ An interactive machine learning web application that predicts a student's **Math
   - AdaBoost
   - XGBoost
   - CatBoost
-  - K-Nearest Neighbors
 
 - **Hyperparameter tuning** was performed using:
 
   ```python
-  RandomizedSearchCV(estimator, param_distributions=params, cv=3, ...)
+  GridSearchCV(model,para,cv = 3, n_jobs= -1 , verbose=3)
 
 ## 🧰 Tech Stack
 
@@ -55,7 +54,7 @@ An interactive machine learning web application that predicts a student's **Math
 | Frontend   | HTML5, CSS3, Bootstrap 5                 |
 | Backend    | Python, Flask                            |
 | ML Framework | scikit-learn, pandas, numpy, xgboost   |
-| Model Tools | RandomizedSearchCV, pickle/dill, CatBoost |
+| Model Tools | GridSearchCV, pickle/dill, CatBoost |
 
 ---
 
