@@ -16,7 +16,7 @@ class PredictPipeline:
     def predict(self, feature):
         try:
             model_path = "artifacts\model.pkl"
-            preprocessor_path = "artifacts\preprocessor.pkl"
+            preprocessor_path = "artifacts\proprocessor.pkl"
             model = load_object(file_path = model_path)
             preprocessor = load_object(file_path=preprocessor_path)
             data_scaled = preprocessor.transform(feature)
@@ -44,13 +44,13 @@ class CustomData:
     def get_data_as_data_frame(self):
         try:
               custom_data_input_dict = {
-                   "gender": [self.gender],
-                   "race ethnicity": [self.race_ethnicity],
-                   "parental_level_of _education":[self.parental_level_of_education],
-                   "lunch": [self.lunch],
-                   "test_preparation _course": [self.test_preparation_course],
-                   "reading score": [self.reading_score],
-                   "writing score": [self.writing_score],
+                  "gender": [self.gender],
+                  "race_ethnicity": [self.race_ethnicity],
+                  "parental_level_of_education": [self.parental_level_of_education],
+                  "lunch": [self.lunch],
+                  "test_preparation_course": [self.test_preparation_course],
+                  "reading_score": [self.reading_score],
+                  "writing_score": [self.writing_score],
               }
 
               return pd.DataFrame(custom_data_input_dict)
