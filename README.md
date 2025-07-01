@@ -29,15 +29,6 @@ An interactive machine learning web application that predicts a student's **Math
 
 ---
 
-## 🧠 Workflow Overview
-
-```mermaid
-graph TD
-A[User Input] --> B[DataFrame Creation]
-B --> C[Preprocessing Pipeline]
-C --> D[Trained Model]
-D --> E[Prediction]
-E --> F[Display Result]
 
 
 ## 🧪 Model Evaluation
@@ -67,3 +58,16 @@ E --> F[Display Result]
 | Model Tools | RandomizedSearchCV, pickle/dill, CatBoost |
 
 ---
+
+## 🧠 Workflow Overview
+
+```mermaid
+graph TD
+    A["User visits Home Page"] --> B["User fills form: Gender, Ethnicity, Education, Lunch, Test Prep, Reading Score, Writing Score"]
+    B --> C["Form submitted to /predictdata route"]
+    C --> D["Flask receives request and creates CustomData instance"]
+    D --> E["Convert data to DataFrame"]
+    E --> F["Load saved Preprocessor and Model from artifacts"]
+    F --> G["Preprocess input using saved ColumnTransformer"]
+    G --> H["Predict math score using trained model"]
+    H --> I["Render prediction result on home.html"]
