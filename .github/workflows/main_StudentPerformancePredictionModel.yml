@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://studentperformancepredicionmodel.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_976a18a85df0463c9d86219bb3a49933 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_a5a5eb3d928d4d71a9872d80f7b82e7f }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_3c990dd71cac4315885737a0535464d7 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_492aa41527a64a02b68ccf9077d8b257 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: studentperformancepredicionmodel.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_976a18a85df0463c9d86219bb3a49933 }}/raw9k/predictionmodel:${{ github.sha }}
+        tags: studentperformancepredicionmodel.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_3c990dd71cac4315885737a0535464d7 }}/raw9k/predictionmodel:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'StudentPerformancePredictionModel'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_809c3bd89a42458a9ad882248fad1722 }}
-        images: 'studentperformancepredictionmodel.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_976a18a85df0463c9d86219bb3a49933 }}/raw9k/predictionmodel:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_bd6be3c9c861418c8a2a81e14eccc937 }}
+        images: 'studentperformancepredicionmodel.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_3c990dd71cac4315885737a0535464d7 }}/raw9k/predictionmodel:${{ github.sha }}'
