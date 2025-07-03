@@ -48,4 +48,4 @@ jobs:
         app-name: 'StudentPerformancePredictionModel'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_809c3bd89a42458a9ad882248fad1722 }}
-        images: 'studentperformancepredicionmodel.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_976a18a85df0463c9d86219bb3a49933 }}/raw9k/predictionmodel:${{ github.sha }}'
+        images: 'studentperformancepredictionmodel.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_976a18a85df0463c9d86219bb3a49933 }}/raw9k/predictionmodel:${{ github.sha }}'
