@@ -3,6 +3,12 @@
 An interactive machine learning web application that predicts a student's **Math Score** based on their academic profile and demographics. This project showcases an end-to-end ML pipeline, from raw data ingestion to a fully deployable prediction system with a responsive frontend.
 
 ---
+## 🕸️ Website Snapshot
+![home page](<website snapshot/Screenshot_18-7-2025_132559_studentperformanceprediction-cygteybne4g2h6gw.centralus-01.azurewebsites.jpeg>)
+
+![Prediction page](<website snapshot/Screenshot_18-7-2025_132650_studentperformanceprediction-cygteybne4g2h6gw.centralus-01.azurewebsites.jpeg>)
+
+---
 
 ## 📌 Key Features
 
