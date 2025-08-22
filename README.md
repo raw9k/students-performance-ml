@@ -15,7 +15,7 @@ An interactive machine learning web application that predicts a student's **Math
 - 🔢 Predicts a **student's math score** using:
   - Gender
   - Race/Ethnicity
-  - Parental level of educatio
+  - Parental level of education
   - Lunch type
   - Test preparation course status
   - Reading score
