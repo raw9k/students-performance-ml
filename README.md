@@ -9,6 +9,13 @@ An interactive machine learning web application that predicts a student's **Math
 ![Prediction page](<website snapshot/Screenshot_18-7-2025_132650_studentperformanceprediction-cygteybne4g2h6gw.centralus-01.azurewebsites.jpeg>)
 
 ---
+---
+## 🚀 Live Demo  
+
+🌐 Web App: https://studentperformanceprediction-cygteybne4g2h6gw.centralus-01.azurewebsites.net  
+📦 Docker Hub: https://hub.docker.com/r/raw9k/studentperformancepredictionmodel
+
+---
 
 ## 📌 Key Features
 
