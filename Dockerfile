@@ -1,10 +1,16 @@
+FROM python:3.11-slim
 
-FROM python:3.7-slim-buster
 WORKDIR /app
 COPY . /app
 
-RUN apt update -y
+# If you don't need OS packages, you can remove apt entirely.
+# If you do need OS packages, install them here (example keeps it minimal).
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+       build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
 CMD ["python3", "app.py"]
 
