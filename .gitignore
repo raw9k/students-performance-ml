@@ -171,5 +171,3 @@ cython_debug/
 .pypirc
 
 
-#Folder to store data
-artifacts
